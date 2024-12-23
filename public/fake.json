@@ -1,0 +1,42 @@
+[
+      {
+        "serviceId": 1,
+        "serviceName": "Home Cleaning",
+        "serviceDescription": "Professional home cleaning service to keep your living space spotless.",
+        "serviceImage": "https://i.ibb.co.com/mH0y2MZ/inter.jpg",
+        "serviceProvider": {
+          "name": "John Doe",
+          "image": "https://i.ibb.co.com/SXkm5yn/plumbers.jpg",
+          "email": "john.doe@example.com"
+        },
+        "servicePrice": 50.00,
+        "location": "New York, NY"
+      },
+      {
+        "serviceId": 2,
+        "serviceName": "Lawn Mowing",
+        "serviceDescription": "Get your lawn trimmed and maintained by experts.",
+        "serviceImage": "https://i.ibb.co.com/mH0y2MZ/inter.jpg",
+        "serviceProvider": {
+          "name": "Jane Smith",
+          "image": "https://i.ibb.co.com/SXkm5yn/plumbers.jpg",
+          "email": "jane.smith@example.com"
+        },
+        "servicePrice": 30.00,
+        "location": "Los Angeles, CA"
+      },
+      {
+        "serviceId": 3,
+        "serviceName": "Personal Trainer",
+        "serviceDescription": "Achieve your fitness goals with personalized training sessions.",
+        "serviceImage": "https://i.ibb.co.com/mH0y2MZ/inter.jpg",
+        "serviceProvider": {
+          "name": "Mike Johnson",
+          "image": "https://i.ibb.co.com/SXkm5yn/plumbers.jpg",
+          "email": "mike.johnson@example.com"
+        },
+        "servicePrice": 100.00,
+        "location": "Chicago, IL"
+      }
+    ]
+  
