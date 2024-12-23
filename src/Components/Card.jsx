@@ -18,7 +18,7 @@ export default function Card({x}) {
    
     <>
    
-{/*  */}
+
 <div className="card bg-base-100 w-96 shadow-xl rounded-lg">
   <figure>
     <img className='w-36 object-cover'
@@ -43,7 +43,7 @@ export default function Card({x}) {
     </div>
   </div>
 </div>
-{/*  */}
+
 </>
   )
 }

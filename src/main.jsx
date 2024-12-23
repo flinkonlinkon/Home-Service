@@ -17,6 +17,8 @@ import AddService from './Components/AddService.jsx'
 import DoService from './Components/DoService.jsx'
 import Details from './Components/Details.jsx'
 import Buy from './Components/Buy.jsx'
+import ManageServiceCardMap from './Components/ManageServiceCardMap.jsx'
+import Update from './Components/Update.jsx'
 
 const router = createBrowserRouter([
   {
@@ -36,7 +38,7 @@ const router = createBrowserRouter([
     },
     {
       path:'/manageservices',
-      element:<ManageService></ManageService>
+      element:<ManageServiceCardMap></ManageServiceCardMap>
     },
     {
       path:'/allservices',
@@ -61,6 +63,10 @@ const router = createBrowserRouter([
     {
       path:'/buy',
       element:<Buy></Buy>
+    },
+    {
+      path:'/update',
+      element:<Update></Update>
     }
 
   ]
