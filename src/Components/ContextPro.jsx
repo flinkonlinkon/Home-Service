@@ -15,12 +15,25 @@ export default function ContextPro({children}) {
     let [oldData,setOlddata] = useState({})
     let [user,setUser] = useState()
     let [loading,setLoading] = useState(true)
+    let [book,setBook] = useState([])  
     
+    useEffect(()=>{
+        async function bookData() {
+
+            let url = await fetch('http://localhost:5000/bookData')
+            let data = await url.json()
+
+            setBook(data)
+            
+        }
+
+        bookData()
+    },[])
 
     useEffect(()=>{
 
         async function baby(){
-            let url = await fetch('./fake.json')
+            let url = await fetch('http://localhost:5000/alldata')
             let data = await url.json()
             setApi(data)
             
@@ -101,6 +114,6 @@ setLoading(true)
     }
 
 
-  return <Apicon.Provider value={{api,setApi,handaleClick,arrData,setArrData,oldData,setOlddata,singUp,singIn,user,setUser,googlePopSing,singsOut,loading,updatePro,forgetPass}}> {children} </Apicon.Provider>
+  return <Apicon.Provider value={{api,setApi,handaleClick,arrData,setArrData,oldData,setOlddata,singUp,singIn,user,setUser,googlePopSing,singsOut,loading,updatePro,forgetPass,book}}> {children} </Apicon.Provider>
   
 }

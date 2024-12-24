@@ -2,15 +2,21 @@ import React, { useContext } from 'react'
 import { Apicon } from './ContextPro'
 import Swal from 'sweetalert2'
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 export default function Details() {
     let {arrData,setArrData,handaleClick,setOlddata,oldData,user} = useContext(Apicon)
     let navigate = useNavigate()
     const {serviceId,serviceName,serviceDescription,serviceImage,serviceProvider,servicePrice,location} = oldData || {};
-    console.log(user);
+    
     
     function modal(){
-       navigate('/buy')
+       navigate('/bookedservice')
+       axios.post('http://localhost:5000/book',oldData).then(res =>{
+        console.log(res.data);
+        
+       })
+       
     }
     
   return (
@@ -28,10 +34,10 @@ export default function Details() {
             <h1 className='text-2xl font-bold md:text-3xl'>{serviceName}</h1>
 
             <div className='flex font-semibold justify-center items-center'>
-      <p><img className='w-20 rounded-full object-cover' src={serviceProvider.image} alt="" /></p>
+      <p><img className='w-20 rounded-full object-cover' src={serviceProvider.providerimage} alt="" /></p>
       <div>
-        <p>Name: {serviceProvider.name}</p>
-        <p>Email: {serviceProvider.email}</p>
+        <p>Name: {serviceProvider.providername}</p>
+        <p>Email: {serviceProvider.provideremail}</p>
       </div>
     </div>
 

@@ -2,12 +2,15 @@ import React, { useContext, useState } from 'react'
 import { Apicon } from './ConTextPro';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
-export default function Buy() {
+export default function Buy({x}) {
     let {oldData,user} = useContext(Apicon)
     let navigate = useNavigate()
     const [date, setDate] = useState('');
     let [address, setAddress] = useState('')
+    console.log(x);
+    
 
     const {serviceId,serviceName,serviceDescription,serviceImage,serviceProvider,servicePrice,location} = oldData || {};
     function mod(){
@@ -21,17 +24,23 @@ let userEmail = user.email
           let newData = {date,address,serviceId,serviceName,serviceDescription,serviceImage,serviceProvider,servicePrice,location,userEmail}
          
           console.log(newData);
+
+          axios.post('http://localhost:5000/buy',newData).then(res =>{
+            if(res.data){
+              navigate('/')
+            }
+          })
           
-          navigate('/')
+          
     }
   return (
-    <div>
+    <div className='p-3 gap-1 mt-3 mb-3 shadow-md rounded-md'>
          <div className='font-medium'>
        Service Data
-         Name:{serviceProvider.name}
+         Name:{serviceProvider.providername}
          <br></br>  
 
-        Email:{serviceProvider.email } <br></br>  
+        Email:{serviceProvider.provideremail } <br></br>  
               Service Id:{serviceId} <br></br>  
            Your Email : {user.email}
            <br></br> 

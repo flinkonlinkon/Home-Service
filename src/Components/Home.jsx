@@ -3,9 +3,14 @@ import Slider from './Slider'
 import { motion, animate, useTransform } from "framer-motion";
 import { Apicon } from './ConTextPro';
 import Card from './Card';
+import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
   let {api} = useContext(Apicon)
+  let navigate = useNavigate()
+
+  
+  
   return (
     <div className='w-11/12 mx-auto  bg-slate-200 rounded-md'>
       <Slider></Slider>
@@ -21,10 +26,12 @@ export default function Home() {
 <div className='grid grid-cols-1 md:grid-cols-3 md:gap-3'>
 {
 
-  api.map(x => <Card x={x}></Card>)
+  api.map(x => <Card x={x}></Card>).slice(0,6)
 
 }
 </div>
+
+<button onClick={()=>navigate('/allservices')} className='btn'>All Service</button>
 
 
       </div>

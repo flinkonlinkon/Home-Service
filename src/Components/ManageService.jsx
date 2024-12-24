@@ -1,16 +1,31 @@
 import React, { useContext } from 'react'
 import { Apicon } from './ContextPro'
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 export default function ManageService({x}) {
   let {handaleClick} = useContext(Apicon)
   let navigate = useNavigate()
 
-  function handleUpdate(){
-    navigate('/update')
+
+  let {_id,serviceId,serviceName,serviceDescription,serviceImage,serviceProvider,servicePrice,location} = x
+  
+  function handleUpdate(x){
+    console.log(x);
+    
+    navigate(`/updateHome/${_id}`)
+    
 }
 
-  let {serviceId,serviceName,serviceDescription,serviceImage,serviceProvider,servicePrice,location} = x
+function handleDelete(x){
+
+  axios.delete(`http://localhost:5000/delete/${_id}`)
+  .then(res =>{
+    console.log(res.data);
+    
+  })
+
+}
 
   return (
     <div>
@@ -23,10 +38,10 @@ export default function ManageService({x}) {
   <div className="card-body">
     <h2 className="card-title font-bold">{serviceName}</h2>
     <div className='flex font-semibold'>
-      <p><img className='w-20 rounded-full object-cover' src={serviceProvider.image} alt="" /></p>
+    <p><img className='w-20 rounded-full object-cover' src={serviceProvider.providerimage} alt="" /></p>
       <div>
-        <p>Name: {serviceProvider.name}</p>
-        <p>Email: {serviceProvider.email}</p>
+        <p>Name: {serviceProvider.providername}</p>
+        <p>Email: {serviceProvider.provideremail}</p>
       </div>
     </div>
     <p className='font-bold'>{serviceDescription}</p>
@@ -34,8 +49,8 @@ export default function ManageService({x}) {
     <p className='font-bold'>Location: {location}</p>
 
     <div className="card-actions justify-end">
-      <button onClick={handleUpdate}  className="btn btn-primary">Update</button>
-      <button  className="btn btn-primary">Delete</button>
+      <button onClick={()=>handleUpdate(x)}  className="btn btn-primary">Update</button>
+      <button onClick={()=>handleDelete(x)} className="btn btn-primary">Delete</button>
     </div>
   </div>
 </div>

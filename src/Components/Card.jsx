@@ -28,10 +28,10 @@ export default function Card({x}) {
   <div className="card-body">
     <h2 className="card-title font-bold">{serviceName}</h2>
     <div className='flex font-semibold'>
-      <p><img className='w-20 rounded-full object-cover' src={serviceProvider.image} alt="" /></p>
+      <p><img className='w-20 rounded-full object-cover' src={serviceProvider.providerimage} alt="" /></p>
       <div>
-        <p>Name: {serviceProvider.name}</p>
-        <p>Email: {serviceProvider.email}</p>
+        <p>Name: {serviceProvider.providername}</p>
+        <p>Email: {serviceProvider.provideremail}</p>
       </div>
     </div>
     <p className='font-bold'>{serviceDescription}</p>

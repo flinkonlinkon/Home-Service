@@ -1,9 +1,14 @@
 import React from 'react'
 import { useContext } from 'react'
 import { Apicon } from './ConTextPro'
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 export default function AddService() {
   let {user} = useContext(Apicon)
+  let navigate = useNavigate()
+
   function handleInput(e){
     e.preventDefault()
 
@@ -22,7 +27,20 @@ export default function AddService() {
     let allData = {serviceProvider,serviceName,serviceDescription,serviceImage,servicePrice,location,userEmail}
 console.log(allData);
 
+axios.post('http://localhost:5000/addData',allData).then(res => {
+    if(res.data){
+        Swal.fire({
+            title: "Data Added",
+            text: "Data Added Successfully",
+            icon: "success"
+          });
+        navigate('/')
+    }
+})
+
+
   }
+  
   return (
     <div>
       <form className='grid grid-cols-1 md:grid-cols-3 gap-3 mb-5 mt-5' onSubmit={handleInput}>
