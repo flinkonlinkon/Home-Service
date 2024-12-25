@@ -12,7 +12,7 @@ export default function Buy({x}) {
     console.log(x);
     
 
-    const {serviceId,serviceName,serviceDescription,serviceImage,serviceProvider,servicePrice,location} = oldData || {};
+    const {serviceId,serviceName,serviceDescription,serviceImage,serviceProvider,servicePrice,location} = x || {};
     function mod(){
         Swal.fire({
             title: "Successfully Purchase",

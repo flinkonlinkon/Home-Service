@@ -27,13 +27,13 @@ export default function Details() {
         
 
         <div>
-            <img className='h-[600px] w-[341px] object-cover rounded-2xl' src={serviceImage} alt="" />
+            <img className='h-[600px] w-[1400px] object-cover rounded-2xl' src={serviceImage} alt="" />
         </div>
-        <div className='relative left-[55px]'>
+        <div className='relative'>
 
             <h1 className='text-2xl font-bold md:text-3xl'>{serviceName}</h1>
 
-            <div className='flex font-semibold justify-center items-center'>
+            <div className='flex font-semibold  items-center'>
       <p><img className='w-20 rounded-full object-cover' src={serviceProvider.providerimage} alt="" /></p>
       <div>
         <p>Name: {serviceProvider.providername}</p>
@@ -44,11 +44,12 @@ export default function Details() {
 
 
             <p className='font-bold mt-3'>Location:{location}</p>
+            <p className='font-bold mt-3'>Price:{servicePrice}</p>
             
 
        
         <div>
-        <p className='text-xl font-bold'>ShortDescription:</p><p className='text-gray-500 font-semibold'>{serviceDescription}</p>
+        <p className='text-xl font-bold w-4/5 mt-5 mb-5'>ShortDescription:</p><p className='text-gray-500 font-semibold'>{serviceDescription}</p>
         </div>
        
 

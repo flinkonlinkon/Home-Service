@@ -19,11 +19,14 @@ import Details from './Components/Details.jsx'
 import Buy from './Components/Buy.jsx'
 import ManageServiceCardMap from './Components/ManageServiceCardMap.jsx'
 import Update from './Components/Update.jsx'
+import PrivateRouter from './Components/PrivateRoute.jsx'
+import Error from './Components/Error.jsx'
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
+    errorElement:<Error></Error>,
     children:[{
       path:'/',
       element:<Home></Home>
@@ -38,23 +41,38 @@ const router = createBrowserRouter([
     },
     {
       path:'/manageservices',
-      element:<ManageServiceCardMap></ManageServiceCardMap>
+      element:<PrivateRouter>
+        <ManageServiceCardMap></ManageServiceCardMap>
+      </PrivateRouter>
+      
     },
     {
       path:'/allservices',
-      element:<AllService></AllService>,
+      element:<PrivateRouter>
+<AllService></AllService>
+      </PrivateRouter>
+      ,
     },
     {
       path:'/bookedservice',
-      element:<Book></Book>
+      element:<PrivateRouter>
+ <Book></Book>
+      </PrivateRouter>
+     
     },
     {
       path:'/addservice',
-      element:<AddService></AddService>
+      element:<PrivateRouter>
+ <AddService></AddService>
+      </PrivateRouter>
+     
     },
     {
       path:'/doservice',
-      element:<DoService></DoService>
+      element:<PrivateRouter>
+  <DoService></DoService>
+      </PrivateRouter>
+    
     },
     {
       path:'/details',

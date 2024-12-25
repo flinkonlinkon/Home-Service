@@ -2,8 +2,9 @@ import React, { useContext } from 'react'
 import { Apicon } from './ContextPro'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import Swal from 'sweetalert2'
 
-export default function ManageService({x}) {
+export default function ManageService({x,del,setDel}) {
   let {handaleClick} = useContext(Apicon)
   let navigate = useNavigate()
 
@@ -19,11 +20,36 @@ export default function ManageService({x}) {
 
 function handleDelete(x){
 
-  axios.delete(`http://localhost:5000/delete/${_id}`)
-  .then(res =>{
-    console.log(res.data);
-    
-  })
+  Swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!"
+  }).then((result) => {
+    if (result.isConfirmed) {
+      axios.delete(`http://localhost:5000/delete/${_id}`)
+      .then(res =>{
+        console.log(res.data);
+        
+      })
+
+      Swal.fire({
+       
+        title: "Deleted!",
+        text: "Your file has been deleted.",
+        icon: "success"
+      });
+      const remains = del.filter(d => d._id !== _id);
+setDel(remains);
+      
+      
+    }
+  });
+
+  
 
 }
 

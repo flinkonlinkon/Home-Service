@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Apicon } from './ContextPro'
-import Myprofile from './Myprofile'
+
 import { Navigate } from "react-router-dom";
 import Loa from './Loa';
 
