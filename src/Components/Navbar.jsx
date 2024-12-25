@@ -60,7 +60,10 @@ export default function Navbar() {
         
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">My Home Service</a>
+    <div className='flex gap-x-4 justify-center items-center'>
+    <img className='w-20' src="https://i.ibb.co.com/HDDxmry/6499901.jpg" alt="" />
+    <a className="btn btn-ghost text-xl hidden md:block">My Home Service</a>
+    </div>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1 md:flex md:justify-center md:items-center">
