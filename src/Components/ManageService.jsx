@@ -30,7 +30,7 @@ function handleDelete(x){
     confirmButtonText: "Yes, delete it!"
   }).then((result) => {
     if (result.isConfirmed) {
-      axios.delete(`http://localhost:5000/delete/${_id}`)
+      axios.delete(`https://home-service-server-wine.vercel.app/delete/${_id}`)
       .then(res =>{
         // console.log(res.data);
         

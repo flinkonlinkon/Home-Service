@@ -25,7 +25,7 @@ let userEmail = user.email
          
           // console.log(newData);
 
-          axios.post('http://localhost:5000/buy',newData).then(res =>{
+          axios.post('https://home-service-server-wine.vercel.app/buy',newData).then(res =>{
             if(res.data){
               navigate('/')
             }

@@ -8,7 +8,7 @@ export default function AllService() {
   let [find,setFind] = useState('')
   let [getData,setGetData] = useState(api)
   useEffect(()=>{
-    axios.get(`http://localhost:5000/alldata?findData=${find}`).then(res => {
+    axios.get(`https://home-service-server-wine.vercel.app/alldata?findData=${find}`).then(res => {
       setGetData(res.data);
       console.log(res.data);
       

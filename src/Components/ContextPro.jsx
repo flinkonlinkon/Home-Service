@@ -20,7 +20,7 @@ export default function ContextPro({children}) {
     useEffect(()=>{
         async function bookData() {
 
-            let url = await fetch('http://localhost:5000/bookData')
+            let url = await fetch('https://home-service-server-wine.vercel.app/bookData')
             let data = await url.json()
 
             setBook(data)
@@ -33,7 +33,7 @@ export default function ContextPro({children}) {
     useEffect(()=>{
 
         async function baby(){
-            let url = await fetch('http://localhost:5000/alldata')
+            let url = await fetch('https://home-service-server-wine.vercel.app/alldata')
             let data = await url.json()
             setApi(data)
             

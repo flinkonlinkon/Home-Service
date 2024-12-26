@@ -15,7 +15,7 @@ export default function DoCard({x}) {
             status : e.target.value
         }
 
-        axios.put(`http://localhost:5000/updateStatus/${id}`, data).then(res => {
+        axios.put(`https://home-service-server-wine.vercel.app/updateStatus/${id}`, data).then(res => {
             // console.log(res.data);
             
             if(res.data){

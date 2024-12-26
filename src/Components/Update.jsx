@@ -33,7 +33,7 @@ export default function Update() {
       let allData = {serviceProvider,serviceName,serviceDescription,serviceImage,servicePrice,location,userEmail}
   // console.log(allData);
   
-  axios.put(`http://localhost:5000/updateHome/${_id}`,allData).then(res => {
+  axios.put(`https://home-service-server-wine.vercel.app/updateHome/${_id}`,allData).then(res => {
     // console.log(res.data);
     
     if(res.data){
