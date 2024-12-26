@@ -85,7 +85,7 @@ const router = createBrowserRouter([
     {
       path:'/updateHome/:id',
       element:<Update></Update>,
-      loader:({params})=> fetch(`https://home-service-server-wine.vercel.app/updateHome/${params.id}`)
+      loader:({params})=> fetch(`http://localhost:5000/updateHome/${params.id}`)
     }
 
   ]
