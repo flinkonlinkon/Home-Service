@@ -12,8 +12,8 @@ export default function Details() {
     
     function modal(){
        navigate('/bookedservice')
-       axios.post('http://localhost:5000/book',oldData).then(res =>{
-        console.log(res.data);
+       axios.post('https://home-service-server-wine.vercel.app/book',oldData).then(res =>{
+        // console.log(res.data);
         
        })
        

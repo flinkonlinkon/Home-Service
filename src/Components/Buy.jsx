@@ -9,7 +9,7 @@ export default function Buy({x}) {
     let navigate = useNavigate()
     const [date, setDate] = useState('');
     let [address, setAddress] = useState('')
-    console.log(x);
+    // console.log(x);
     
 
     const {serviceId,serviceName,serviceDescription,serviceImage,serviceProvider,servicePrice,location} = x || {};
@@ -23,9 +23,9 @@ export default function Buy({x}) {
 let userEmail = user.email
           let newData = {date,address,serviceId,serviceName,serviceDescription,serviceImage,serviceProvider,servicePrice,location,userEmail}
          
-          console.log(newData);
+          // console.log(newData);
 
-          axios.post('http://localhost:5000/buy',newData).then(res =>{
+          axios.post('https://home-service-server-wine.vercel.app/buy',newData).then(res =>{
             if(res.data){
               navigate('/')
             }

@@ -10,13 +10,13 @@ export default function DoCard({x}) {
     let navigate = useNavigate()
 
     function handleStatus(e,id){
-        console.log(e.target.value,id);
+        // console.log(e.target.value,id);
         const data ={
             status : e.target.value
         }
 
-        axios.put(`http://localhost:5000/updateStatus/${id}`, data).then(res => {
-            console.log(res.data);
+        axios.put(`https://home-service-server-wine.vercel.app/updateStatus/${id}`, data).then(res => {
+            // console.log(res.data);
             
             if(res.data){
                 Swal.fire({
@@ -29,7 +29,7 @@ export default function DoCard({x}) {
         })
         
     }
-    console.log(x);
+    // console.log(x);
     
   return (
     <div>

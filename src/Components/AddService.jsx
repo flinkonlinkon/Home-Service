@@ -25,9 +25,9 @@ export default function AddService() {
 
     let serviceProvider = {provideremail,providerimage,providername}
     let allData = {serviceProvider,serviceName,serviceDescription,serviceImage,servicePrice,location,userEmail}
-console.log(allData);
+// console.log(allData);
 
-axios.post('http://localhost:5000/addData',allData).then(res => {
+axios.post('https://home-service-server-wine.vercel.app/addData',allData).then(res => {
     if(res.data){
         Swal.fire({
             title: "Data Added",

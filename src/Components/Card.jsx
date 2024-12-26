@@ -9,7 +9,7 @@ export default function Card({x}) {
 
   let {serviceId,serviceName,serviceDescription,serviceImage,serviceProvider,servicePrice,location} = x
   function clickD(x){
-    console.log(x);
+    // console.log(x);
     
     handaleClick(x)
   navigate('/details')

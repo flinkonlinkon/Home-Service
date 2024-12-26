@@ -13,7 +13,7 @@ export default function Update() {
     
     let {_id,serviceId,serviceName,serviceDescription,serviceImage,serviceProvider,servicePrice,location} = data
 
-    console.log(data);
+    // console.log(data);
 
     function handleInput(e){
       e.preventDefault()
@@ -31,10 +31,10 @@ export default function Update() {
   
       let serviceProvider = {provideremail,providerimage,providername}
       let allData = {serviceProvider,serviceName,serviceDescription,serviceImage,servicePrice,location,userEmail}
-  console.log(allData);
+  // console.log(allData);
   
-  axios.put(`http://localhost:5000/updateHome/${_id}`,allData).then(res => {
-    console.log(res.data);
+  axios.put(`https://home-service-server-wine.vercel.app/updateHome/${_id}`,allData).then(res => {
+    // console.log(res.data);
     
     if(res.data){
         Swal.fire({
