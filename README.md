@@ -1,8 +1,5 @@
-# React + Vite
+# Home service
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This site build for home service.Here is the live link of this site :https://home-service-2af49.web.app/
+This site build by html,tailwind,react JS,node js.you can hire any people for your need.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
